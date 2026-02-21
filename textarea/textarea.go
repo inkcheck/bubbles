@@ -509,7 +509,7 @@ func (m *Model) CursorDown() {
 
 	offset := 0
 	for offset < charOffset {
-		if m.row >= len(m.value) || m.col >= len(m.value[m.row]) || offset >= nli.CharWidth-1 {
+		if m.row >= len(m.value) || m.col >= len(m.value[m.row]) || offset >= nli.CharWidth {
 			break
 		}
 		offset += rw.RuneWidth(m.value[m.row][m.col])
@@ -544,7 +544,7 @@ func (m *Model) CursorUp() {
 
 	offset := 0
 	for offset < charOffset {
-		if m.col >= len(m.value[m.row]) || offset >= nli.CharWidth-1 {
+		if m.col >= len(m.value[m.row]) || offset >= nli.CharWidth {
 			break
 		}
 		offset += rw.RuneWidth(m.value[m.row][m.col])
